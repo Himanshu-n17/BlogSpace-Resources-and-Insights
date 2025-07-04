@@ -31,7 +31,7 @@ export const EditPostModal = ({ post, isOpen, onClose }) => {
 
   const onSubmit = async (data) => {
     setIsLoading(true);
-    
+
     setTimeout(() => {
       updatePost(post._id, data, token);
       setIsLoading(false);

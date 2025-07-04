@@ -125,8 +125,7 @@ export const MyPostsModal = ({ isOpen, onClose, onEditPost, onViewPost }) => {
                           onClick={() => setShowDeleteConfirm(post.id)}
                           className="p-2 text-gray-500 hover:text-red-600 hover:bg-red-50 rounded-lg transition-colors"
                           title="Delete post"
-                        >
-                        </button>
+                        ></button>
                       </div>
                     </div>
                   </div>
