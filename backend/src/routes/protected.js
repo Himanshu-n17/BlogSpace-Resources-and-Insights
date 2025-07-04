@@ -1,11 +1,10 @@
-// src/routes/protected.js
-const express = require('express');
-const authenticateToken = require('../middleware/auth');
+const express = require("express");
+const authenticateToken = require("../middleware/auth");
 
 const router = express.Router();
 
 // Protected route example
-router.get('/dashboard', authenticateToken, (req, res) => {
+router.get("/dashboard", authenticateToken, (req, res) => {
   res.json({ message: `Welcome user ${req.user.userId}!`, user: req.user });
 });
 

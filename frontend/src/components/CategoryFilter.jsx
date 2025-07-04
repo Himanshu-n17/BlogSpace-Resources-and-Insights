@@ -25,7 +25,6 @@ export const CategoryFilter = ({ selectedCategory, onCategoryChange }) => {
           }`}
         >
           {category.name}
-          {/* <span className="ml-2 text-xs opacity-75">({category.count})</span> */}
         </button>
       ))}
     </div>

@@ -31,10 +31,6 @@ const SignupPage = () => {
   const password = watch("password", "");
   const confirmPassword = watch("confirmPassword", "");
 
-  // React.useEffect(() => {
-  //   clearError();
-  // }, [clearError]);
-
   // Password strength checker
   const getPasswordStrength = (password) => {
     if (!password) return { score: 0, label: "", color: "" };

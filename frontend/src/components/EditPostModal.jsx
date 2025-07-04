@@ -8,7 +8,7 @@ import { useAuth } from "../contexts/AuthContext";
 export const EditPostModal = ({ post, isOpen, onClose }) => {
   const [isLoading, setIsLoading] = useState(false);
   const { updatePost } = useBlog();
-  const { user,getAuthToken } = useAuth();
+  const { user, getAuthToken } = useAuth();
   const {
     register,
     handleSubmit,

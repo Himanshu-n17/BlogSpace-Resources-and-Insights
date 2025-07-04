@@ -7,7 +7,7 @@ import { useBlog } from "../contexts/BlogContext";
 
 export const CreatePostModal = ({ isOpen, onClose }) => {
   const [isLoading, setIsLoading] = useState(false);
-  const { user,getAuthToken } = useAuth();
+  const { user, getAuthToken } = useAuth();
   const { addPost } = useBlog();
   const {
     register,
@@ -18,7 +18,7 @@ export const CreatePostModal = ({ isOpen, onClose }) => {
 
   const t = getAuthToken();
   const onSubmit = async (data) => {
-    console.log("Button clicked",user);
+    console.log("Button clicked", user);
     if (!user) return;
 
     setIsLoading(true);
@@ -31,8 +31,8 @@ export const CreatePostModal = ({ isOpen, onClose }) => {
         category: data.category,
         tags: data.tags,
         content: data.content,
-        description: data.excerpt, // you can adjust this if you have a separate description field
-        url: data.imageUrl, // if you want a separate url, map it here
+        description: data.excerpt,
+        url: data.imageUrl,
       };
 
       await addPost(postData, t);

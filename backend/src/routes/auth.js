@@ -6,10 +6,10 @@ const { generateAccessToken, generateRefreshToken } = require("../utils/jwt");
 
 const router = express.Router();
 
-// Store refresh tokens in memory (for demo, use DB or Redis in prod)
+// Store refresh tokens in memory
 const refreshTokens = new Set();
 
-// Register
+// Register user
 router.post(
   "/register",
   body("name").isLength({ min: 2 }),
@@ -51,7 +51,7 @@ router.post(
   }
 );
 
-// Login
+// Login the user
 router.post(
   "/login",
   body("email").isEmail(),
@@ -76,7 +76,7 @@ router.post(
       const refreshToken = generateRefreshToken(payload);
 
       refreshTokens.add(refreshToken);
-      // create an object with user name and email and avtar to send in response body
+      // create an object with user name and email  to send in response body
       const userResponse = {
         id: user._id,
         name: user.name,
@@ -110,7 +110,7 @@ router.post("/token", (req, res) => {
   }
 });
 
-// Logout route (optional) - to invalidate refresh token
+// Logout route - to invalidate refresh token
 router.post("/logout", (req, res) => {
   const { refreshToken } = req.body;
   if (refreshToken) refreshTokens.delete(refreshToken);

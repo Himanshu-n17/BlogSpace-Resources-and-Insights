@@ -1,4 +1,4 @@
-// src/server.js
+
 require("dotenv").config({ path: require("path").join(__dirname, "../.env") });
 
 const app = require("./src/app");

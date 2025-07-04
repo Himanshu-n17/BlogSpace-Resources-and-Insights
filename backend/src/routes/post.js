@@ -5,7 +5,7 @@ const Post = require("../models/Post");
 
 const router = express.Router();
 
-// Create a post
+// Create a new post
 router.post(
   "/",
   authenticateToken,
@@ -79,7 +79,7 @@ router.put("/:id", authenticateToken, async (req, res) => {
     res.json(post);
   } catch (err) {
     console.log(err);
-    
+
     res.status(500).json({ message: "Server error" });
   }
 });

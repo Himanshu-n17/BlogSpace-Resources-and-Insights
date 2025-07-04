@@ -1,4 +1,3 @@
-// src/app.js
 const path = require("path");
 const fs = require("fs");
 
@@ -59,7 +58,7 @@ const errorLogStream = fs.createWriteStream(
 );
 
 // Global error handler middleware
-app.use((err, req, res, next) => {  
+app.use((err, req, res, next) => {
   const errorMessage = `[${new Date().toISOString()}] ${err.stack}\n`;
   errorLogStream.write(errorMessage);
 

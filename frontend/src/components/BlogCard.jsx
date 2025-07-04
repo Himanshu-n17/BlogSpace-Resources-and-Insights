@@ -14,13 +14,13 @@ export const BlogCard = ({ post, onClick, onEdit, onDelete }) => {
   const handleEdit = (e) => {
     e.stopPropagation();
     const token = getAuthToken();
-    onEdit(post,token);
+    onEdit(post, token);
   };
 
   const handleDelete = (e) => {
     e.stopPropagation();
     const token = getAuthToken();
-    onDelete(post._id, token); // ✅ Use the already retrieved token
+    onDelete(post._id, token); // Using the already retrieved token
   };
 
   return (

@@ -70,8 +70,8 @@ function HomePageContent() {
 
   const confirmDeletePost = () => {
     if (showDeleteConfirm) {
-      const token = getAuthToken(); // ✅ Get token here
-      deletePost(showDeleteConfirm, token); // ✅ Pass token explicitly
+      const token = getAuthToken(); // Get token here
+      deletePost(showDeleteConfirm, token); // Pass token explicitly
       setShowDeleteConfirm(null);
     }
   };

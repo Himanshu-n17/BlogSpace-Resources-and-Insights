@@ -23,10 +23,6 @@ const LoginPage = () => {
     formState: { errors },
   } = useForm();
 
-  // React.useEffect(() => {
-  //   clearError();
-  // }, [clearError]);
-
   const onSubmit = async (data) => {
     try {
       await login(data.email, data.password);

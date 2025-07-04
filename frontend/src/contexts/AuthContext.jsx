@@ -1,9 +1,9 @@
 import React, { createContext, useContext, useReducer, useEffect } from "react";
-import Cookies from "js-cookie"; // 🔹 Add this
+import Cookies from "js-cookie";
 
 const AuthContext = createContext(undefined);
 
-// Reducer stays the same...
+// Reducer stays the same
 const authReducer = (state, action) => {
   switch (action.type) {
     case "LOGIN_START":
@@ -44,7 +44,7 @@ export const AuthProvider = ({ children }) => {
     error: null,
   });
 
-  // 🔁 Restore user from cookie on load
+  // Restore user from cookie on load
   useEffect(() => {
     const accessToken = Cookies.get("accessToken");
     const user = Cookies.get("user");
@@ -77,7 +77,7 @@ export const AuthProvider = ({ children }) => {
         accessToken: data.accessToken,
       };
 
-      // 🔐 Store in cookies
+      // Storing it in cookies
       Cookies.set("accessToken", data.accessToken, { expires: 7 });
       Cookies.set("refreshToken", data.refreshToken, { expires: 7 });
       Cookies.set("user", JSON.stringify(user), { expires: 7 });
@@ -109,7 +109,7 @@ export const AuthProvider = ({ children }) => {
         email: data.userResponse?.email || email,
       };
 
-      // 🔐 Store in cookies
+      // Storage in cookies
       Cookies.set("accessToken", data.accessToken, { expires: 7 });
       Cookies.set("refreshToken", data.refreshToken, { expires: 7 });
       Cookies.set("user", JSON.stringify(user), { expires: 7 });

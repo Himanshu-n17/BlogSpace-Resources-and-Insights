@@ -27,7 +27,7 @@ const blogReducer = (state, action) => {
 export const BlogProvider = ({ children }) => {
   const [state, dispatch] = useReducer(blogReducer, { posts: [] });
 
-  // Fetch all posts
+  // Fetching all the posts
   const fetchPosts = async () => {
     try {
       const res = await axios.get("http://localhost:3000/api/posts");
@@ -37,7 +37,7 @@ export const BlogProvider = ({ children }) => {
     }
   };
 
-  // Add new post
+  // Add a new post
   const addPost = async (postData, token) => {
     try {
       const res = await axios.post(
@@ -57,7 +57,7 @@ export const BlogProvider = ({ children }) => {
     }
   };
 
-  // Update post
+  // Update the post
   const updatePost = async (postId, postData, token) => {
     try {
       const res = await axios.put(
@@ -77,7 +77,7 @@ export const BlogProvider = ({ children }) => {
     }
   };
 
-  // Delete post
+  // Deleting the post
   const deletePost = async (postId, token) => {
 
     try {

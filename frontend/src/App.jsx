@@ -17,7 +17,7 @@ const ProtectedRoute = ({ children }) => {
   return isAuthenticated ? children : <Navigate to="/login" replace />;
 };
 
-// Public Route Component (redirect to home if already authenticated)
+// Public Route Component (for redirecting to home uf user is already authenticated)
 const PublicRoute = ({ children }) => {
   const { isAuthenticated } = useAuth();
   return !isAuthenticated ? children : <Navigate to="/" replace />;
