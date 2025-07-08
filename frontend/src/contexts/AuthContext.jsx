@@ -3,7 +3,6 @@ import Cookies from "js-cookie";
 
 const AuthContext = createContext(undefined);
 
-// Reducer stays the same
 const authReducer = (state, action) => {
   switch (action.type) {
     case "LOGIN_START":

@@ -1,7 +1,7 @@
 const jwt = require("jsonwebtoken");
 
 function authenticateToken(req, res, next) {
-  const authHeader = req.headers["authorization"]; // Bearer <token>
+  const authHeader = req.headers["authorization"]; 
   const token = authHeader && authHeader.split(" ")[1];
 
   if (!token)
@@ -11,7 +11,7 @@ function authenticateToken(req, res, next) {
 
   try {
     const decoded = jwt.verify(token, process.env.JWT_SECRET);
-    req.user = decoded; // Attach user data to request
+    req.user = decoded; 
     next();
   } catch (err) {
     console.error(err);
