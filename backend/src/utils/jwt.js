@@ -19,7 +19,7 @@ function verifyToken(token) {
   try {
     return jwt.verify(token, JWT_SECRET);
   } catch (err) {
-    return null; // invalid or expired token
+    return null; // when invalid or expired token
   }
 }
 

@@ -5,7 +5,7 @@ const Post = require("../models/Post");
 
 const router = express.Router();
 
-// Create a new post
+// Creating a new post only when user is authorized
 router.post(
   "/",
   authenticateToken,
@@ -39,7 +39,7 @@ router.post(
   }
 );
 
-// Get all posts
+// For Getting all posts
 router.get("/", async (req, res) => {
   try {
     const posts = await Post.find().populate("author", "name email");
@@ -49,7 +49,7 @@ router.get("/", async (req, res) => {
   }
 });
 
-// Get single post
+// Getting single post -> viewing the post
 router.get("/:id", authenticateToken, async (req, res) => {
   try {
     const post = await Post.findById(req.params.id).populate(
@@ -63,7 +63,8 @@ router.get("/:id", authenticateToken, async (req, res) => {
   }
 });
 
-// Update post
+// Updating post i.e editing
+// only the author can edit the post
 router.put("/:id", authenticateToken, async (req, res) => {
   try {
     const post = await Post.findById(req.params.id);
@@ -84,7 +85,8 @@ router.put("/:id", authenticateToken, async (req, res) => {
   }
 });
 
-// Delete post
+// Delete post only when user is authorized
+// Only the author of the post can delete it
 router.delete("/:id", authenticateToken, async (req, res) => {
   try {
     const post = await Post.findById(req.params.id);
