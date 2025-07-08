@@ -6,7 +6,7 @@ const { generateAccessToken, generateRefreshToken } = require("../utils/jwt");
 
 const router = express.Router();
 
-// Store refresh tokens in memory
+// refresh tokens in memory
 const refreshTokens = new Set();
 
 // Register user
@@ -76,7 +76,6 @@ router.post(
       const refreshToken = generateRefreshToken(payload);
 
       refreshTokens.add(refreshToken);
-      // create an object with user name and email  to send in response body
       const userResponse = {
         id: user._id,
         name: user.name,

@@ -1,6 +1,5 @@
 const mongoose = require("mongoose");
 
-//postschema
 const postSchema = new mongoose.Schema(
   {
     title: {
