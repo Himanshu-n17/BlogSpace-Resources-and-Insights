@@ -1,7 +1,7 @@
 const path = require("path");
 const fs = require("fs");
 
-// Load environment variables from root .env file explicitly
+// Loading environment variables from root .env file explicitly
 require("dotenv").config({ path: path.join(__dirname, "../.env") });
 
 const express = require("express");
@@ -19,7 +19,7 @@ const app = express();
 app.use(cors());
 app.use(express.json());
 
-// Ensure logs directory exists
+// check logs directory exists
 const logDirectory = path.join(__dirname, "../logs");
 if (!fs.existsSync(logDirectory)) {
   fs.mkdirSync(logDirectory, { recursive: true });
@@ -41,7 +41,7 @@ mongoose
   .then(() => console.log("MongoDB connected"))
   .catch((err) => console.error("MongoDB connection error:", err));
 
-// Basic test route
+//test route
 app.use("/api", protectedRoutes);
 
 app.get("/", (req, res) => {

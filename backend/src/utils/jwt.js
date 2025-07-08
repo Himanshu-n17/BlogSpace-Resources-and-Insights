@@ -1,15 +1,15 @@
-const jwt = require('jsonwebtoken');
+const jwt = require("jsonwebtoken");
 
 const JWT_SECRET = process.env.JWT_SECRET;
-const ACCESS_TOKEN_EXPIRY = '1h';       // Access token validity
-const REFRESH_TOKEN_EXPIRY = '7d';      // Refresh token validity
+const ACCESS_TOKEN_EXPIRY = "1h"; // Access token validity
+const REFRESH_TOKEN_EXPIRY = "7d"; // Refresh token validity
 
-// Generate Access Token
+// Generating Access Token
 function generateAccessToken(payload) {
   return jwt.sign(payload, JWT_SECRET, { expiresIn: ACCESS_TOKEN_EXPIRY });
 }
 
-// Generate Refresh Token
+// Generating Refresh Token
 function generateRefreshToken(payload) {
   return jwt.sign(payload, JWT_SECRET, { expiresIn: REFRESH_TOKEN_EXPIRY });
 }

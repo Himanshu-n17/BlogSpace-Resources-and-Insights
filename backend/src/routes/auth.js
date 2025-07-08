@@ -110,7 +110,7 @@ router.post("/token", (req, res) => {
   }
 });
 
-// Logout route - to invalidate refresh token
+// Logout route for invalidate refresh token
 router.post("/logout", (req, res) => {
   const { refreshToken } = req.body;
   if (refreshToken) refreshTokens.delete(refreshToken);
