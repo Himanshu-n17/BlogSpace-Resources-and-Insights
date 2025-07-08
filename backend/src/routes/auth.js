@@ -90,7 +90,6 @@ router.post(
   }
 );
 
-// Refresh token route
 router.post("/token", (req, res) => {
   const { refreshToken } = req.body;
   if (!refreshToken)
