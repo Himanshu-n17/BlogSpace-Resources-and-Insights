@@ -6,7 +6,6 @@ const { generateAccessToken, generateRefreshToken } = require("../utils/jwt");
 
 const router = express.Router();
 
-// refresh tokens in memory
 const refreshTokens = new Set();
 
 // Register user
